@@ -95,9 +95,8 @@
 
 @push('scripts')
 <script>
-    (function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const dataUrl = @json(route('products.data'));
-        const detailRouteBase = @json(url('/products'));
 
         const table = $('#products-table').DataTable({
             processing: true,
@@ -208,6 +207,6 @@
         $('#filter-category').on('change', function () {
             table.ajax.reload();
         });
-    })();
+    });
 </script>
 @endpush

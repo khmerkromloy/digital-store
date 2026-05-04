@@ -104,7 +104,7 @@
 
 @push('scripts')
 <script>
-    (function () {
+    document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('contact-form');
         const submit = document.getElementById('contact-submit');
         const alertBox = document.getElementById('contact-alert');
@@ -164,6 +164,6 @@
                     setLoading(false);
                 });
         });
-    })();
+    });
 </script>
 @endpush
