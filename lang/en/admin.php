@@ -138,6 +138,48 @@ return [
         'password_confirmation' => 'Confirm password',
         'locale' => 'Locale',
         'avatar' => 'Avatar',
+
+        // Customers
+        'first_name' => 'First name',
+        'last_name' => 'Last name',
+        'full_name' => 'Full name',
+        'telegram_handle' => 'Telegram',
+        'orders_count' => 'Orders',
+        'total_spent' => 'Total spent',
+        'note' => 'Note',
+
+        // Orders
+        'order_number' => 'Order #',
+        'customer' => 'Customer',
+        'subtotal' => 'Subtotal',
+        'discount_total' => 'Discount',
+        'tax_total' => 'Tax',
+        'grand_total' => 'Total',
+        'payment_status' => 'Payment',
+        'delivery_status' => 'Delivery',
+        'payment_method' => 'Payment method',
+        'delivery_method' => 'Delivery method',
+        'customer_note' => 'Customer note',
+        'admin_note' => 'Admin note',
+        'placed_at' => 'Placed at',
+        'paid_at' => 'Paid at',
+        'delivered_at' => 'Delivered at',
+        'items' => 'Items',
+        'unit_price' => 'Unit price',
+        'quantity' => 'Qty',
+        'discount' => 'Discount',
+        'line_total' => 'Line total',
+
+        // Payments
+        'payment_number' => 'Payment #',
+        'method' => 'Method',
+        'amount' => 'Amount',
+        'reference_no' => 'Reference #',
+        'proof_image' => 'Proof image',
+        'verified_by' => 'Verified by',
+
+        // Inventory (branch_product)
+        'price_override' => 'Price override',
     ],
 
     'product_types' => [
@@ -163,6 +205,31 @@ return [
         'sold' => 'Sold',
         'expired' => 'Expired',
         'invalid' => 'Invalid',
+        'pending' => 'Pending',
+        'paid' => 'Paid',
+        'partial' => 'Partial',
+        'unpaid' => 'Unpaid',
+        'refunded' => 'Refunded',
+        'cancelled' => 'Cancelled',
+        'delivered' => 'Delivered',
+        'failed' => 'Failed',
+        'succeeded' => 'Succeeded',
+    ],
+
+    'payment_methods' => [
+        'cash' => 'Cash',
+        'bakong' => 'Bakong',
+        'aba' => 'ABA Pay',
+        'wing' => 'Wing',
+        'telegram' => 'Telegram',
+        'usdt' => 'USDT',
+        'manual' => 'Manual',
+    ],
+
+    'delivery_methods' => [
+        'email' => 'Email',
+        'manual' => 'Manual',
+        'telegram' => 'Telegram',
     ],
 
     'dialogs' => [
@@ -176,6 +243,18 @@ return [
         'created' => ':name created.',
         'updated' => ':name updated.',
         'deleted' => ':name deleted.',
+        'item_added' => 'Line item added.',
+        'item_removed' => 'Line item removed.',
+        'totals_recalculated' => 'Order totals recalculated.',
+    ],
+
+    'order' => [
+        'add_item' => 'Add line item',
+        'no_items' => 'This order has no line items yet.',
+        'header' => 'Order header',
+        'totals' => 'Totals',
+        'recalc' => 'Recalculate totals',
+        'mark_paid' => 'Mark as paid',
     ],
 
     'auth' => [

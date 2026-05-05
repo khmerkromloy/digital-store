@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Payment extends Model
 {
@@ -29,5 +30,14 @@ class Payment extends Model
     public function verifier(): BelongsTo
     {
         return $this->belongsTo(User::class, 'verified_by');
+    }
+
+    public static function generatePaymentNumber(): string
+    {
+        do {
+            $candidate = 'PAY-'.now()->format('ymd').'-'.strtoupper(Str::random(5));
+        } while (static::query()->where('payment_number', $candidate)->exists());
+
+        return $candidate;
     }
 }

@@ -35,6 +35,38 @@ final class ColumnRenderer
         'succeeded' => 'success',
     ];
 
+    /**
+     * Render a status badge for any value mapped in self::STATUS_BADGES.
+     * Falls back to a neutral secondary badge so unknown statuses still display.
+     */
+    public static function badge(?string $value, ?string $i18nPrefix = null): string
+    {
+        if ($value === null || $value === '') {
+            return '<span class="text-muted">—</span>';
+        }
+        $color = self::STATUS_BADGES[$value] ?? 'secondary';
+        $label = e($value);
+        $attr = $i18nPrefix
+            ? ' data-i18n="'.e($i18nPrefix.'.'.$value).'"'
+            : '';
+
+        return '<span class="badge bg-'.$color.'"'.$attr.'>'.$label.'</span>';
+    }
+
+    /**
+     * Render a money value with optional currency prefix and 2-decimal precision.
+     */
+    public static function money($value, ?string $currency = null): string
+    {
+        if ($value === null || $value === '') {
+            return '<span class="text-muted">—</span>';
+        }
+        $formatted = number_format((float) $value, 2);
+        $prefix = $currency ? '<span class="text-muted small me-1">'.e($currency).'</span>' : '';
+
+        return '<span class="fw-medium">'.$prefix.e($formatted).'</span>';
+    }
+
     public static function render(Model $row, string $key): string
     {
         $value = data_get($row, $key);

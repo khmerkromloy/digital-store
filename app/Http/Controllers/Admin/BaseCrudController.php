@@ -75,7 +75,7 @@ abstract class BaseCrudController extends Controller
         $query = $this->modelClass::query()->with($this->with);
         $this->applyExtraFilters($query, $request);
 
-        return DataTables::eloquent($query)
+        $dt = DataTables::eloquent($query)
             ->addColumn('action_buttons', fn (Model $row) => $this->rowActions($row))
             ->addColumn('row_index', function ($row) {
                 static $i = 0;
@@ -83,7 +83,13 @@ abstract class BaseCrudController extends Controller
                 return ++$i;
             })
             ->editColumn('created_at', fn (Model $row) => optional($row->created_at)->format('Y-m-d H:i'))
-            ->editColumn('updated_at', fn (Model $row) => optional($row->updated_at)->format('Y-m-d H:i'))
+            ->editColumn('updated_at', fn (Model $row) => optional($row->updated_at)->format('Y-m-d H:i'));
+
+        foreach ($this->columnFormatters() as $col => $fn) {
+            $dt->editColumn($col, $fn);
+        }
+
+        return $dt
             ->filter(function (Builder $q) use ($request) {
                 if (! $request->filled('search.value') && ! $request->filled('q')) {
                     return;
@@ -250,7 +256,19 @@ HTML;
 
     protected function rawColumns(): array
     {
-        return ['action_buttons'];
+        return array_merge(['action_buttons'], array_keys($this->columnFormatters()));
+    }
+
+    /**
+     * Column => closure(Model $row): string. Closure must return HTML; the
+     * column will automatically be flagged raw so SweetAlert badges, money
+     * formatting, etc. render unescaped.
+     *
+     * @return array<string, \Closure>
+     */
+    protected function columnFormatters(): array
+    {
+        return [];
     }
 
     protected function meta(): array
