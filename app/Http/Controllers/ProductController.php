@@ -69,7 +69,7 @@ class ProductController extends Controller
     {
         abort_unless($product->is_active, 404);
 
-        $product->increment('views');
+        $product->increment('view_count');
         $product->load('category');
 
         $related = Product::query()

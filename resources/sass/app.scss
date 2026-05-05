@@ -203,3 +203,179 @@ footer {
     color: $primary;
     font-weight: 500;
 }
+
+/* ----------------------------------------------------------------
+ |  ADMIN LAYOUT
+ |  AdminLTE-flavored sidebar/topbar built on Bootstrap 5.
+ | ---------------------------------------------------------------- */
+
+.admin-body {
+    background: #f3f4f6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-sidebar {
+    width: 240px;
+    background: #1f2937;
+    color: #cbd5e1;
+    flex-shrink: 0;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    overflow-y: auto;
+    transition: width .2s ease;
+
+    .brand {
+        padding: 1rem 1.25rem;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #fff;
+        background: rgba(0,0,0,.18);
+        display: flex;
+        align-items: center;
+        gap: .55rem;
+        text-decoration: none;
+        i { font-size: 1.4rem; color: $primary; }
+    }
+
+    .nav-header {
+        padding: .9rem 1.25rem .35rem;
+        font-size: .68rem;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        color: #94a3b8;
+    }
+
+    .nav-link {
+        color: #cbd5e1;
+        padding: .55rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: .65rem;
+        border-left: 3px solid transparent;
+        font-size: .92rem;
+
+        &:hover {
+            color: #fff;
+            background: rgba(255,255,255,.04);
+        }
+
+        &.active {
+            color: #fff;
+            background: rgba($primary, .2);
+            border-left-color: $primary;
+        }
+
+        i { width: 18px; text-align: center; opacity: .9; }
+    }
+}
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-topbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: .65rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+
+    .breadcrumb { margin: 0; }
+    .nav-link { padding: .25rem .6rem; }
+    .ds-lang-switcher .dropdown-toggle::after { display: none; }
+}
+
+.admin-content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.admin-footer {
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+    padding: .75rem 1.25rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: .85rem;
+}
+
+.admin-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: .75rem;
+    box-shadow: 0 1px 3px rgba(15,23,42,.04);
+
+    .card-header {
+        background: transparent;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1rem 1.25rem;
+    }
+
+    .card-title { font-weight: 600; color: $dark; margin: 0; }
+
+    .card-body { padding: 1.25rem; }
+}
+
+/* DataTables BS5 fixed pagination styling */
+.dataTables_wrapper {
+    .dataTables_paginate {
+        padding-top: .5rem;
+        .pagination {
+            margin: 0;
+            justify-content: flex-end;
+            .page-item .page-link { border-radius: .35rem; margin: 0 2px; }
+            .page-item.active .page-link {
+                background: $primary;
+                border-color: $primary;
+            }
+        }
+    }
+    .dataTables_length, .dataTables_filter, .dataTables_info {
+        margin-bottom: .75rem;
+    }
+}
+
+/* Khmer typography for the .locale-km body class */
+body.locale-km {
+    font-family: 'Noto Sans Khmer', 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+/* React language switcher dropdown polish */
+.ds-lang-switcher {
+    .flag-icon { font-size: 1.05em; }
+    .dropdown-item.active {
+        background-color: $primary;
+        color: #fff;
+    }
+    .dropdown-item { display: flex; align-items: center; gap: .5rem; cursor: pointer; }
+}
+
+/* Login screen */
+.admin-login-page {
+    min-height: 100vh;
+    background: var(--brand-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .login-card {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 24px 48px rgba(15,23,42,.16);
+        padding: 2.25rem 2rem;
+        max-width: 420px;
+        width: 100%;
+    }
+}

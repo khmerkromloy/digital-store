@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
+        'name_kh',
         'slug',
         'icon',
+        'cover_image',
         'description',
         'is_active',
         'sort_order',
@@ -42,5 +45,17 @@ class Category extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    /**
+     * Localised name preferring Khmer when the active locale is `km`.
+     */
+    public function getLocalisedNameAttribute(): string
+    {
+        if (app()->getLocale() === 'km' && filled($this->name_kh)) {
+            return $this->name_kh;
+        }
+
+        return $this->name;
     }
 }
