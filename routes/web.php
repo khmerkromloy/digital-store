@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InventoryController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\OrderItemController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ProductKeyController;
 use App\Http\Controllers\Auth\LoginController;
@@ -74,4 +79,25 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     /* Product keys */
     Route::get('product-keys/data', [ProductKeyController::class, 'data'])->name('product-keys.data');
     Route::resource('product-keys', ProductKeyController::class);
+
+    /* Branch-scoped inventory */
+    Route::get('inventory/data', [InventoryController::class, 'data'])->name('inventory.data');
+    Route::resource('inventory', InventoryController::class);
+
+    /* Customers */
+    Route::get('customers/data', [CustomerController::class, 'data'])->name('customers.data');
+    Route::resource('customers', CustomerController::class);
+
+    /* Orders + nested order item sub-resource */
+    Route::get('orders/data', [OrderController::class, 'data'])->name('orders.data');
+    Route::post('orders/{order}/recalculate', [OrderController::class, 'recalculate'])->name('orders.recalculate');
+    Route::post('orders/{order}/mark-paid', [OrderController::class, 'markPaid'])->name('orders.mark-paid');
+    Route::resource('orders', OrderController::class);
+    Route::get('orders/{order}/items/create', [OrderItemController::class, 'create'])->name('orders.items.create');
+    Route::post('orders/{order}/items', [OrderItemController::class, 'store'])->name('orders.items.store');
+    Route::delete('orders/{order}/items/{item}', [OrderItemController::class, 'destroy'])->name('orders.items.destroy');
+
+    /* Payments */
+    Route::get('payments/data', [PaymentController::class, 'data'])->name('payments.data');
+    Route::resource('payments', PaymentController::class);
 });

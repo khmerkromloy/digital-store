@@ -133,6 +133,48 @@ return [
         'password_confirmation' => 'បញ្ជាក់ពាក្យសម្ងាត់',
         'locale' => 'ភាសា',
         'avatar' => 'រូបភាព',
+
+        // Customers
+        'first_name' => 'នាមខ្លួន',
+        'last_name' => 'នាមត្រកូល',
+        'full_name' => 'ឈ្មោះពេញ',
+        'telegram_handle' => 'តេឡេក្រាម',
+        'orders_count' => 'ចំនួនបញ្ជាទិញ',
+        'total_spent' => 'សរុបបានចំណាយ',
+        'note' => 'កំណត់ត្រា',
+
+        // Orders
+        'order_number' => 'លេខបញ្ជាទិញ',
+        'customer' => 'អតិថិជន',
+        'subtotal' => 'សរុបរង',
+        'discount_total' => 'បញ្ចុះតម្លៃ',
+        'tax_total' => 'ពន្ធ',
+        'grand_total' => 'សរុប',
+        'payment_status' => 'ស្ថានភាពទូទាត់',
+        'delivery_status' => 'ស្ថានភាពដឹកជញ្ជូន',
+        'payment_method' => 'វិធីទូទាត់',
+        'delivery_method' => 'វិធីដឹកជញ្ជូន',
+        'customer_note' => 'កំណត់ត្រាអតិថិជន',
+        'admin_note' => 'កំណត់ត្រាបុគ្គលិក',
+        'placed_at' => 'បានកម្ម៉ង់',
+        'paid_at' => 'បានទូទាត់',
+        'delivered_at' => 'បានដឹកជញ្ជូន',
+        'items' => 'ទំនិញ',
+        'unit_price' => 'តម្លៃឯកតា',
+        'quantity' => 'បរិមាណ',
+        'discount' => 'បញ្ចុះតម្លៃ',
+        'line_total' => 'សរុបបន្ទាត់',
+
+        // Payments
+        'payment_number' => 'លេខទូទាត់',
+        'method' => 'វិធី',
+        'amount' => 'ទឹកប្រាក់',
+        'reference_no' => 'លេខយោង',
+        'proof_image' => 'រូបភាពភស្តុតាង',
+        'verified_by' => 'បានផ្ទៀងផ្ទាត់ដោយ',
+
+        // Inventory
+        'price_override' => 'តម្លៃជំនួស',
     ],
 
     'product_types' => [
@@ -158,6 +200,31 @@ return [
         'sold' => 'បានលក់',
         'expired' => 'ផុតកំណត់',
         'invalid' => 'មិនត្រឹមត្រូវ',
+        'pending' => 'កំពុងរង់ចាំ',
+        'paid' => 'បានទូទាត់',
+        'partial' => 'ផ្នែក',
+        'unpaid' => 'មិនទាន់ទូទាត់',
+        'refunded' => 'បានសងវិញ',
+        'cancelled' => 'បានបោះបង់',
+        'delivered' => 'បានដឹកជញ្ជូន',
+        'failed' => 'បរាជ័យ',
+        'succeeded' => 'ជោគជ័យ',
+    ],
+
+    'payment_methods' => [
+        'cash' => 'សាច់ប្រាក់',
+        'bakong' => 'បាគុង',
+        'aba' => 'ABA Pay',
+        'wing' => 'Wing',
+        'telegram' => 'តេឡេក្រាម',
+        'usdt' => 'USDT',
+        'manual' => 'ដោយដៃ',
+    ],
+
+    'delivery_methods' => [
+        'email' => 'អ៊ីមែល',
+        'manual' => 'ដោយដៃ',
+        'telegram' => 'តេឡេក្រាម',
     ],
 
     'dialogs' => [
@@ -171,6 +238,18 @@ return [
         'created' => ':name ត្រូវបានបង្កើត។',
         'updated' => ':name ត្រូវបានកែប្រែ។',
         'deleted' => ':name ត្រូវបានលុប។',
+        'item_added' => 'ទំនិញត្រូវបានបន្ថែម។',
+        'item_removed' => 'ទំនិញត្រូវបានដកចេញ។',
+        'totals_recalculated' => 'ចំនួនសរុបនៃការបញ្ជាទិញត្រូវបានគណនាឡើងវិញ។',
+    ],
+
+    'order' => [
+        'add_item' => 'បន្ថែមទំនិញ',
+        'no_items' => 'ការបញ្ជាទិញនេះមិនទាន់មានទំនិញនៅឡើយទេ។',
+        'header' => 'ព័ត៌មានបញ្ជាទិញ',
+        'totals' => 'សរុប',
+        'recalc' => 'គណនាសរុបឡើងវិញ',
+        'mark_paid' => 'សម្គាល់ថាបានទូទាត់',
     ],
 
     'auth' => [
