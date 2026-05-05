@@ -1,0 +1,191 @@
+<?php
+
+return [
+    'app_name' => 'Digital Store System',
+    'brand_short' => 'DigitalStore',
+    'tagline' => 'Sign in to manage your digital store',
+    'language' => 'Language',
+    'language_en' => 'English',
+    'language_km' => 'ខ្មែរ',
+
+    'header' => [
+        'home' => 'Home',
+        'profile' => 'Profile',
+        'logout' => 'Logout',
+        'login' => 'Login',
+        'storefront' => 'Storefront',
+    ],
+
+    'sidebar_groups' => [
+        'main' => 'MAIN',
+        'catalog' => 'CATALOG',
+        'sales' => 'SALES',
+        'customers' => 'CUSTOMERS',
+        'staff_users' => 'STAFF & USERS',
+        'marketing' => 'MARKETING',
+        'system' => 'SYSTEM',
+    ],
+
+    'resources' => [
+        'dashboard' => 'Dashboard',
+        'branches' => 'Branches',
+        'branch' => 'Branch',
+        'categories' => 'Categories',
+        'category' => 'Category',
+        'products' => 'Products',
+        'product' => 'Product',
+        'product_keys' => 'License Keys',
+        'product_key' => 'License Key',
+        'inventory' => 'Inventory',
+        'orders' => 'Orders',
+        'order' => 'Order',
+        'order_items' => 'Order Items',
+        'payments' => 'Payments',
+        'payment' => 'Payment',
+        'customers' => 'Customers',
+        'customer' => 'Customer',
+        'users' => 'Users',
+        'user' => 'User',
+        'roles' => 'Roles',
+        'role' => 'Role',
+        'permissions' => 'Permissions',
+        'permission' => 'Permission',
+        'contact_messages' => 'Contact Messages',
+        'contact_message' => 'Contact Message',
+        'settings' => 'Settings',
+        'audit_logs' => 'Audit Logs',
+    ],
+
+    'actions' => [
+        'add_new' => 'Add :name',
+        'create' => 'Create',
+        'edit' => 'Edit',
+        'view' => 'View',
+        'delete' => 'Delete',
+        'save' => 'Save',
+        'cancel' => 'Cancel',
+        'back' => 'Back',
+        'search' => 'Search…',
+        'filter' => 'Filter',
+        'reset' => 'Reset',
+        'export' => 'Export',
+        'reload' => 'Reload',
+        'submit' => 'Submit',
+    ],
+
+    'misc' => [
+        'id' => 'ID',
+        'actions_col' => 'Actions',
+        'no_records' => 'No records found.',
+        'created_at' => 'Created at',
+        'updated_at' => 'Updated at',
+        'all' => 'All',
+        'yes' => 'Yes',
+        'no' => 'No',
+        'optional' => 'Optional',
+        'required' => 'Required',
+        'page_of' => 'Page :current of :total',
+        'quick_start' => 'Quick start',
+        'quick_start_hint' => 'Use the sidebar to manage branches, catalog and license keys.',
+    ],
+
+    'fields' => [
+        // Generic
+        'name' => 'Name',
+        'name_kh' => 'Name (Khmer)',
+        'slug' => 'Slug',
+        'description' => 'Description',
+        'description_kh' => 'Description (Khmer)',
+        'is_active' => 'Active',
+        'is_featured' => 'Featured',
+        'is_default' => 'Default',
+        'sort_order' => 'Sort order',
+        'icon' => 'Icon',
+        'cover_image' => 'Cover image',
+
+        // Branches
+        'code' => 'Code',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'address' => 'Address',
+        'city' => 'City',
+        'country' => 'Country',
+        'timezone' => 'Timezone',
+        'currency' => 'Currency',
+
+        // Catalog
+        'category' => 'Category',
+        'branch' => 'Branch',
+        'product' => 'Product',
+        'sku' => 'SKU',
+        'short_description' => 'Short description',
+        'short_description_kh' => 'Short description (Khmer)',
+        'price' => 'Price',
+        'original_price' => 'Original price',
+        'product_type' => 'Product type',
+        'stock' => 'Stock',
+        'auto_deliver' => 'Auto deliver',
+
+        // Keys
+        'key_value' => 'Key value',
+        'extra_info' => 'Extra info',
+        'status' => 'Status',
+        'expires_at' => 'Expires at',
+
+        // Users
+        'user_type' => 'User type',
+        'password' => 'Password',
+        'password_confirmation' => 'Confirm password',
+        'locale' => 'Locale',
+        'avatar' => 'Avatar',
+    ],
+
+    'product_types' => [
+        'license_key' => 'License Key',
+        'account' => 'Account',
+        'subscription' => 'Subscription',
+        'gift_card' => 'Gift Card',
+        'other' => 'Other',
+    ],
+
+    'user_types' => [
+        'admin' => 'Admin',
+        'staff' => 'Staff',
+        'customer' => 'Customer',
+    ],
+
+    'statuses' => [
+        'active' => 'Active',
+        'inactive' => 'Inactive',
+        'blocked' => 'Blocked',
+        'available' => 'Available',
+        'reserved' => 'Reserved',
+        'sold' => 'Sold',
+        'expired' => 'Expired',
+        'invalid' => 'Invalid',
+    ],
+
+    'dialogs' => [
+        'confirm_delete_title' => 'Are you sure?',
+        'confirm_delete_text' => 'This action cannot be undone.',
+        'confirm_delete_button' => 'Yes, delete',
+        'cancel_button' => 'Cancel',
+    ],
+
+    'flash' => [
+        'created' => ':name created.',
+        'updated' => ':name updated.',
+        'deleted' => ':name deleted.',
+    ],
+
+    'auth' => [
+        'login_title' => 'Sign in',
+        'login_subtitle' => 'Sign in to your admin account',
+        'email' => 'Email',
+        'password' => 'Password',
+        'remember_me' => 'Remember me',
+        'sign_in' => 'Sign in',
+        'invalid_credentials' => 'Invalid email or password.',
+        'logged_out' => 'You have been signed out.',
+    ],
+];

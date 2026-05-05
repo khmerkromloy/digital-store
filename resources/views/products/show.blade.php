@@ -56,7 +56,7 @@
 
                     <div class="d-flex gap-3 small text-muted mb-4 flex-wrap">
                         <span><i class="bi bi-box-seam me-1"></i> {{ $product->stock }} in stock</span>
-                        <span><i class="bi bi-eye me-1"></i> {{ number_format($product->views) }} views</span>
+                        <span><i class="bi bi-eye me-1"></i> {{ number_format($product->view_count) }} views</span>
                         <span><i class="bi bi-cart-check me-1"></i> {{ number_format($product->sales_count) }} sold</span>
                     </div>
 

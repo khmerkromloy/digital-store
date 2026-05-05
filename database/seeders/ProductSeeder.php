@@ -69,12 +69,23 @@ class ProductSeeder extends Seeder
                         'stock' => $item['stock'],
                         'is_active' => true,
                         'is_featured' => $item['featured'],
-                        'views' => random_int(50, 5000),
+                        'product_type' => $this->guessType($categoryName),
+                        'view_count' => random_int(50, 5000),
                         'sales_count' => random_int(5, 500),
                     ]
                 );
             }
         }
+    }
+
+    private function guessType(string $categoryName): string
+    {
+        return match ($categoryName) {
+            'License Keys', 'Gaming' => 'license_key',
+            'Spotify Accounts', 'TikTok Accounts', 'Facebook Accounts' => 'account',
+            'Streaming Services' => 'subscription',
+            default => 'other',
+        };
     }
 
     private function longDescription(string $name, string $short): string
